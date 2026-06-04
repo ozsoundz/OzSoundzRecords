@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oz Soundz Records — Independent Australian Record Label</title>
+<meta name="description" content="Oz Soundz Records — An independent Australian record label built for grassroots artists. Fair deals, real support, artist-first. Coming 2030+.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & ROOT ─────────────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --void:#0A0907; --carbon:#0F0D0A; --coal:#141210; --forge:#1C1916;
+  --soot:#242018; --ash:#2E291E; --gravel:#3A3328; --dust:#4A4235;
+  --pewter:#6A6050; --stone:#8A7E6C; --parch:#B0A080; --aged:#C8B890;
+  --cream:#E2D4B0; --news:#EDE0BC;
+  --rd:#7A1010; --rm:#B81818; --rh:#D42020; --rl:#E83030;
+  --yel:#D4A820; --gld:#C49818;
+  --td:#5A5040; --tm:#8A7A60; --tb:#C0B090; --tr:#DDD0A8; --tw:#EDE0BC;
+  --gr:linear-gradient(135deg,#7A1010,#D42020);
+}
+body{background:var(--void);color:var(--tb);font-family:'Lora',serif;font-weight:400;overflow-x:hidden;line-height:1.65;}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.55;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E");}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--carbon);}::-webkit-scrollbar-thumb{background:var(--rm);}
+
+/* ── NAV ──────────────────────────────────────────────────────────── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(10,9,7,.95);backdrop-filter:blur(14px);border-bottom:2px solid var(--rd);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:62px;transition:border-color .3s;}
+#nav.raised{border-bottom-color:var(--rm);}
+.nb{font-family:'Teko',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tw);cursor:pointer;background:none;border:none;text-align:left;line-height:1.05;}
+.nb em{display:block;font-style:normal;color:var(--rh);font-size:.9rem;letter-spacing:.18em;}
+.nl{display:flex;gap:0;align-items:center;list-style:none;}
+.nb2{background:none;border:none;cursor:pointer;font-family:'Teko',sans-serif;font-size:.9rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--tm);padding:.5rem .85rem;transition:color .2s;position:relative;}
+.nb2:hover,.nb2.on{color:var(--tw);}
+.nb2.on::after{content:'';position:absolute;bottom:0;left:.85rem;right:.85rem;height:2px;background:var(--rm);}
+.hd{position:relative;}
+.dd{position:absolute;top:calc(100% + 4px);left:0;background:rgba(12,10,8,.98);border:1px solid rgba(122,16,16,.4);border-top:2px solid var(--rm);min-width:200px;padding:.3rem 0;opacity:0;visibility:hidden;transform:translateY(-6px);transition:all .2s;backdrop-filter:blur(10px);}
+.hd:hover .dd{opacity:1;visibility:visible;transform:translateY(0);}
+.dd button{display:block;width:100%;text-align:left;background:none;border:none;cursor:pointer;font-family:'Teko',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--tm);padding:.55rem 1.1rem;transition:all .2s;}
+.dd button:hover{color:var(--tw);background:rgba(122,16,16,.18);padding-left:1.4rem;}
+.ncta{background:var(--rm)!important;color:var(--tw)!important;margin-left:.4rem;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));font-weight:700!important;}
+.ncta:hover{background:var(--rh)!important;}
+
+/* ── TICKER ────────────────────────────────────────────────────────── */
+.ticker{background:var(--rd);overflow:hidden;position:relative;padding:.45rem 0;border-bottom:1px solid rgba(10,9,7,.7);}
+.ticker::before,.ticker::after{content:'';position:absolute;top:0;bottom:0;width:70px;z-index:2;}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--rd),transparent);}
+.ticker::after{right:0;background:linear-gradient(-90deg,var(--rd),transparent);}
+.ttrack{display:flex;white-space:nowrap;animation:tick 34s linear infinite;font-family:'Courier Prime',monospace;font-size:.68rem;letter-spacing:.22em;color:rgba(237,224,188,.85);text-transform:uppercase;}
+.ttrack span{padding-right:3.5rem;}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── PAGE HEADER ───────────────────────────────────────────────────── */
+.pgh{background:var(--coal);padding:3.5rem 2rem 2.5rem;border-bottom:1px solid rgba(58,51,40,.6);position:relative;overflow:hidden;}
+.pgh::before{content:'';position:absolute;top:0;right:0;bottom:0;width:38%;background:linear-gradient(135deg,transparent 40%,rgba(122,16,16,.05));clip-path:polygon(16% 0,100% 0,100% 100%,0 100%);}
+.pgh::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--rd),transparent 55%);}
+.bc{font-family:'Courier Prime',monospace;font-size:.63rem;letter-spacing:.25em;color:var(--td);text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:.3rem;flex-wrap:wrap;}
+.bcl{color:var(--rm);cursor:pointer;}.bcl:hover{color:var(--rl);}
+.pht{font-family:'Teko',sans-serif;font-weight:700;font-size:clamp(2.8rem,5.5vw,5rem);text-transform:uppercase;color:var(--tw);line-height:.93;letter-spacing:.04em;position:relative;z-index:1;}
+.pht em{font-style:normal;color:var(--rh);}
+.phs{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--tm);max-width:560px;margin-top:.7rem;line-height:1.6;position:relative;z-index:1;}
+
+/* ── SECTIONS ──────────────────────────────────────────────────────── */
+.sec{padding:5.5rem 2rem;position:relative;}
+.sec.alt{background:var(--coal);}.sec.drk{background:var(--carbon);}.sec.frg{background:var(--forge);}
+.con{max-width:1160px;margin:0 auto;}
+.ey{font-family:'Courier Prime',monospace;font-size:.66rem;letter-spacing:.32em;color:var(--rm);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem;}
+.ey::before{content:'◆';font-size:.5em;opacity:.8;}
+.st{font-family:'Teko',sans-serif;font-weight:700;font-size:clamp(2.4rem,4.5vw,3.8rem);text-transform:uppercase;color:var(--tw);line-height:.93;letter-spacing:.03em;margin-bottom:1.4rem;}
+.st em{font-style:normal;color:var(--rh);}
+.st .gh{-webkit-text-stroke:1.5px var(--stone);color:transparent;}
+.st .yl{color:var(--yel);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start;}
+.g2c{align-items:center;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;}
+
+/* ── CARDS ─────────────────────────────────────────────────────────── */
+.card{background:var(--forge);border:1px solid rgba(58,51,40,.7);padding:1.8rem;position:relative;overflow:hidden;transition:all .3s;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gr);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.card:hover{border-color:rgba(122,16,16,.5);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.5);}
+.card:hover::before{transform:scaleX(1);}
+.ctag{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.22em;color:var(--rm);text-transform:uppercase;margin-bottom:.4rem;}
+.ctit{font-family:'Teko',sans-serif;font-weight:600;font-size:1.25rem;color:var(--tw);margin-bottom:.6rem;letter-spacing:.04em;text-transform:uppercase;}
+.cbod{font-size:.87rem;color:var(--td);line-height:1.7;font-family:'Lora',serif;}
+
+/* ── MANIFESTO QUOTE ───────────────────────────────────────────────── */
+.mani{background:var(--soot);border-left:3px solid var(--rm);padding:2.5rem 2.5rem 2.5rem 3rem;position:relative;}
+.mani::before{content:'"';position:absolute;top:-1rem;left:1.5rem;font-family:'Teko',sans-serif;font-size:8rem;font-weight:700;color:rgba(184,24,24,.12);line-height:1;pointer-events:none;}
+.manit{font-family:'Lora',serif;font-style:italic;font-size:1.2rem;color:var(--tr);line-height:1.65;margin-bottom:.8rem;}
+.mania{font-family:'Courier Prime',monospace;font-size:.63rem;letter-spacing:.22em;color:var(--td);text-transform:uppercase;}
+
+/* ── STAMP ─────────────────────────────────────────────────────────── */
+.stamp{display:inline-flex;align-items:center;gap:.5rem;border:2px solid rgba(122,16,16,.45);padding:.45rem 1rem;font-family:'Courier Prime',monospace;font-size:.66rem;letter-spacing:.22em;color:var(--aged);text-transform:uppercase;position:relative;margin-bottom:1.5rem;}
+.stamp::before{content:'';position:absolute;inset:-4px;border:1px dashed rgba(122,16,16,.2);}
+.sdot{width:6px;height:6px;border-radius:50%;background:var(--rl);animation:sp 1.8s ease-in-out infinite;}
+@keyframes sp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.75)}}
+
+/* ── BUTTONS ───────────────────────────────────────────────────────── */
+.btn{font-family:'Teko',sans-serif;font-weight:600;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;padding:.75rem 2rem;border:none;cursor:pointer;transition:all .25s;display:inline-block;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
+.br{background:var(--rm);color:var(--tw);box-shadow:0 4px 18px rgba(122,16,16,.45);}
+.br:hover{background:var(--rh);transform:translateY(-2px);box-shadow:0 8px 26px rgba(184,24,24,.5);}
+.bg{background:transparent;color:var(--aged);border:1px solid rgba(106,96,80,.5);clip-path:none;}
+.bg:hover{background:rgba(106,96,80,.1);border-color:var(--parch);color:var(--tw);}
+.by{background:var(--yel);color:var(--void);box-shadow:0 4px 18px rgba(212,168,32,.3);}
+.by:hover{background:#E8BA20;transform:translateY(-2px);}
+
+/* ── HERO ──────────────────────────────────────────────────────────── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:6rem 2rem 3rem;background:var(--carbon);}
+.hero::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(255,255,255,.007) 40px,rgba(255,255,255,.007) 41px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,.004) 60px,rgba(255,255,255,.004) 61px);}
+.hero::after{content:'';position:absolute;top:0;right:0;bottom:0;width:42%;background:var(--coal);clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);}
+.hacc{position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--rd),var(--rm),var(--rd));opacity:.8;z-index:2;}
+.hin{max-width:1160px;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:center;position:relative;z-index:3;}
+.htag{font-family:'Courier Prime',monospace;font-size:.67rem;letter-spacing:.36em;color:var(--rm);text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.7rem;}
+.htag::before{content:'';width:22px;height:1px;background:var(--rm);display:inline-block;}
+.htit{font-family:'Teko',sans-serif;font-weight:700;font-size:clamp(4rem,9vw,8.5rem);text-transform:uppercase;letter-spacing:.02em;line-height:.88;color:var(--tw);margin-bottom:.6rem;}
+.htit .lr{color:var(--rh);display:block;}
+.htit .lg{-webkit-text-stroke:2px var(--stone);color:transparent;display:block;font-size:clamp(3rem,6.5vw,6rem);}
+.htit .ls{display:block;}
+.hbod{font-family:'Lora',serif;font-size:1rem;color:var(--tm);line-height:1.75;max-width:480px;margin-bottom:2rem;}
+.hbtns{display:flex;gap:1rem;flex-wrap:wrap;}
+.hvis{display:flex;align-items:center;justify-content:center;}
+
+/* ── VINYL ──────────────────────────────────────────────────────────── */
+.vwrap{width:300px;height:300px;position:relative;display:flex;align-items:center;justify-content:center;}
+.vring{position:absolute;inset:-16px;border-radius:50%;border:1px dashed rgba(122,16,16,.3);animation:vspin 40s linear infinite reverse;}
+.vouter{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,#1a1a1a 0%,#0d0d0d 60%,#1a1a1a 100%);border:2px solid rgba(58,51,40,.5);animation:vspin 24s linear infinite;box-shadow:0 0 40px rgba(0,0,0,.8),inset 0 0 20px rgba(0,0,0,.5);}
+.vouter::before{content:'';position:absolute;inset:8px;border-radius:50%;background:repeating-radial-gradient(circle,rgba(255,255,255,.014) 0px,rgba(255,255,255,.014) 1px,transparent 1px,transparent 4px);}
+.vlabel{position:absolute;inset:30%;border-radius:50%;background:var(--rd);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;box-shadow:inset 0 0 10px rgba(0,0,0,.5);}
+.vln{font-family:'Teko',sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(237,224,188,.9);line-height:1;text-align:center;}
+.vln em{display:block;font-style:normal;color:var(--yel);font-size:.58rem;}
+.vhole{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--void);top:50%;left:50%;transform:translate(-50%,-50%);z-index:3;}
+.vshine{position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,transparent 50%);pointer-events:none;z-index:4;}
+@keyframes vspin{to{transform:rotate(360deg)}}
+
+/* ── STATS BAR ─────────────────────────────────────────────────────── */
+.statsbar{background:var(--coal);border-top:1px solid rgba(58,51,40,.5);border-bottom:1px solid rgba(58,51,40,.5);display:flex;justify-content:center;flex-wrap:wrap;padding:2.2rem 2rem;}
+.si{flex:1;min-width:130px;max-width:190px;text-align:center;padding:0 1.5rem;position:relative;}
+.si+.si::before{content:'';position:absolute;left:0;top:15%;bottom:15%;width:1px;background:linear-gradient(to bottom,transparent,rgba(58,51,40,.6),transparent);}
+.sn{font-family:'Teko',sans-serif;font-weight:700;font-size:2.6rem;color:var(--yel);line-height:1;letter-spacing:.03em;}
+.sl{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.22em;color:var(--td);text-transform:uppercase;margin-top:.2rem;}
+
+/* ── WAVEFORM ──────────────────────────────────────────────────────── */
+.wf{display:flex;align-items:center;gap:3px;margin:2rem 0;}
+.wfb{width:4px;border-radius:2px;background:var(--rm);animation:wfa 1.3s ease-in-out infinite;}
+.wfb:nth-child(2n){background:var(--stone);}.wfb:nth-child(3n){background:var(--rd);}
+.wfb:nth-child(1){height:10px;}.wfb:nth-child(2){height:26px;animation-delay:.1s;}.wfb:nth-child(3){height:38px;animation-delay:.2s;}
+.wfb:nth-child(4){height:18px;animation-delay:.3s;}.wfb:nth-child(5){height:46px;animation-delay:.4s;}.wfb:nth-child(6){height:30px;animation-delay:.5s;}
+.wfb:nth-child(7){height:42px;animation-delay:.6s;}.wfb:nth-child(8){height:16px;animation-delay:.7s;}.wfb:nth-child(9){height:34px;animation-delay:.8s;}
+.wfb:nth-child(10){height:22px;animation-delay:.9s;}.wfb:nth-child(11){height:50px;animation-delay:.5s;}.wfb:nth-child(12){height:14px;animation-delay:.4s;}
+.wfb:nth-child(13){height:36px;animation-delay:.3s;}.wfb:nth-child(14){height:28px;animation-delay:.2s;}.wfb:nth-child(15){height:44px;animation-delay:.1s;}
+@keyframes wfa{0%,100%{transform:scaleY(1);opacity:.65}50%{transform:scaleY(.35);opacity:1}}
+
+/* ── ARTIST CARD ───────────────────────────────────────────────────── */
+.ac{background:var(--soot);border:1px solid rgba(58,51,40,.6);padding:2rem;position:relative;overflow:hidden;transition:all .3s;}
+.ac:hover{border-color:rgba(184,24,24,.4);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.6);}
+.agen{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.22em;color:var(--yel);text-transform:uppercase;margin-bottom:.5rem;}
+.anam{font-family:'Teko',sans-serif;font-weight:700;font-size:1.6rem;color:var(--tw);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.5rem;line-height:1;}
+.aloc{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--td);text-transform:uppercase;margin-bottom:.8rem;}
+.abio{font-size:.85rem;color:var(--td);line-height:1.65;}
+.asta{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--td);}
+.asta.open{color:var(--yel);}
+.adot{width:5px;height:5px;border-radius:50%;background:currentColor;animation:sp 1.8s ease-in-out infinite;}
+
+/* ── GIG ROW ────────────────────────────────────────────────────────── */
+.gr{display:grid;grid-template-columns:90px 1fr auto;gap:1.5rem;align-items:center;background:var(--soot);border:1px solid rgba(58,51,40,.5);padding:1.4rem 2rem;transition:all .3s;margin-bottom:.8rem;}
+.gr:hover{border-color:rgba(122,16,16,.4);background:var(--ash);}
+.gday{font-family:'Teko',sans-serif;font-weight:700;font-size:2.4rem;color:var(--rh);line-height:1;text-align:center;}
+.gmon{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--td);text-transform:uppercase;text-align:center;}
+.gart{font-family:'Teko',sans-serif;font-weight:600;font-size:1.2rem;color:var(--tw);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.2rem;}
+.gven{font-family:'Lora',serif;font-style:italic;font-size:.84rem;color:var(--tm);}
+.gcit{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--td);text-transform:uppercase;margin-top:.2rem;}
+.gtag{font-family:'Courier Prime',monospace;font-size:.58rem;letter-spacing:.18em;color:var(--aged);text-transform:uppercase;border:1px solid rgba(106,96,80,.35);padding:.3rem .7rem;white-space:nowrap;}
+
+/* ── BLOG CARD ─────────────────────────────────────────────────────── */
+.blc{background:var(--forge);border:1px solid rgba(58,51,40,.6);padding:2rem;transition:all .3s;}
+.blc:hover{border-color:rgba(122,16,16,.4);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.5);}
+.bld{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--rm);text-transform:uppercase;margin-bottom:.5rem;}
+.blt{font-family:'Teko',sans-serif;font-weight:700;font-size:1.2rem;color:var(--tw);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem;line-height:1.15;}
+.blb{font-size:.85rem;color:var(--td);line-height:1.65;margin-bottom:1rem;}
+.blr{font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--aged);text-transform:uppercase;cursor:pointer;background:none;border:none;padding:0;transition:color .2s;}
+.blr:hover{color:var(--tw);}
+
+/* ── SOCIAL CARD ───────────────────────────────────────────────────── */
+.soc{background:var(--soot);border:1px solid rgba(58,51,40,.5);padding:2rem;text-align:center;transition:all .3s;text-decoration:none;color:inherit;display:block;}
+.soc:hover{border-color:rgba(184,24,24,.4);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.5);}
+.soci{font-size:2.4rem;display:block;margin-bottom:.8rem;}
+.socn{font-family:'Teko',sans-serif;font-weight:600;font-size:1.1rem;color:var(--tw);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;}
+.soch{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--rm);text-transform:uppercase;margin-bottom:.5rem;}
+.socd{font-size:.82rem;color:var(--td);line-height:1.55;}
+
+/* ── PROCESS STEPS ─────────────────────────────────────────────────── */
+.prs{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;align-items:start;padding:1.8rem 0;border-bottom:1px solid rgba(58,51,40,.4);}
+.prs:last-child{border-bottom:none;}
+.prn{font-family:'Teko',sans-serif;font-weight:700;font-size:2.5rem;color:var(--rd);line-height:1;letter-spacing:.03em;text-align:center;}
+.prl{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--rm);text-transform:uppercase;margin-bottom:.35rem;}
+.prt{font-family:'Teko',sans-serif;font-weight:600;font-size:1.2rem;color:var(--tw);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.4rem;}
+.prb{font-size:.85rem;color:var(--td);line-height:1.65;}
+
+/* ── FORM ──────────────────────────────────────────────────────────── */
+.fld{margin-bottom:1.2rem;}
+.fld label{display:block;font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.22em;color:var(--td);text-transform:uppercase;margin-bottom:.45rem;}
+.fld input,.fld textarea,.fld select{width:100%;background:var(--soot);border:1px solid rgba(58,51,40,.6);color:var(--tr);padding:.75rem 1rem;font-family:'Lora',serif;font-size:.9rem;outline:none;transition:border-color .2s;resize:none;}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--rm);box-shadow:0 0 10px rgba(122,16,16,.15);}
+.fld textarea{height:120px;}
+.fld select option{background:var(--soot);}
+
+/* ── CTA BANNER ────────────────────────────────────────────────────── */
+.ctaban{background:var(--rd);padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(184,24,24,.4);}
+.ctaban::before{content:'RECORDS';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Teko',sans-serif;font-weight:700;font-size:22vw;color:rgba(0,0,0,.15);white-space:nowrap;letter-spacing:.05em;pointer-events:none;}
+.ctaban h2{font-family:'Teko',sans-serif;font-weight:700;font-size:clamp(2.2rem,5vw,4rem);text-transform:uppercase;color:var(--tw);letter-spacing:.04em;margin-bottom:.8rem;position:relative;}
+.ctaban p{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(237,224,188,.75);margin-bottom:2.5rem;position:relative;}
+.bdark{background:var(--void);color:var(--aged);font-family:'Teko',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.2em;text-transform:uppercase;padding:.8rem 2.2rem;border:none;cursor:pointer;transition:all .25s;display:inline-block;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));}
+.bdark:hover{background:var(--carbon);transform:translateY(-2px);color:var(--tw);}
+
+/* ── CONTACT ────────────────────────────────────────────────────────── */
+.crow{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.8rem;}
+.cico{width:42px;height:42px;flex-shrink:0;border:1px solid rgba(122,16,16,.4);display:flex;align-items:center;justify-content:center;color:var(--rm);font-size:1rem;}
+.clbl{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.22em;color:var(--td);text-transform:uppercase;margin-bottom:.2rem;}
+.cval{font-family:'Lora',serif;font-size:.95rem;color:var(--tr);}
+.cval a{color:var(--aged);text-decoration:none;}.cval a:hover{color:var(--tw);}
+
+/* ── GROUP CARD ─────────────────────────────────────────────────────── */
+.gc{background:var(--soot);border:1px solid rgba(58,51,40,.6);padding:2.2rem 2rem;position:relative;overflow:hidden;transition:all .3s;cursor:pointer;text-align:left;display:block;width:100%;}
+.gc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gr);transform:scaleY(0);transform-origin:top;transition:transform .35s;}
+.gc:hover{border-color:rgba(122,16,16,.4);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.55);}
+.gc:hover::before{transform:scaleY(1);}
+.gcic{font-size:2rem;margin-bottom:.8rem;display:block;}
+.gctg{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--rm);text-transform:uppercase;margin-bottom:.35rem;}
+.gcnm{font-family:'Teko',sans-serif;font-weight:700;font-size:1.5rem;color:var(--tw);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.6rem;}
+.gcbd{font-size:.85rem;color:var(--td);line-height:1.65;}
+
+/* ── FOOTER ─────────────────────────────────────────────────────────── */
+footer{background:var(--carbon);border-top:2px solid var(--rd);padding:4rem 2rem 2rem;}
+.fg{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.flogo{font-family:'Teko',sans-serif;font-weight:700;font-size:1.6rem;color:var(--tw);letter-spacing:.1em;text-transform:uppercase;display:block;line-height:1.05;margin-bottom:.8rem;}
+.flogo em{font-style:normal;color:var(--rh);display:block;font-size:1.1rem;}
+.fbod{font-size:.84rem;color:var(--td);line-height:1.7;margin-bottom:1.5rem;}
+.fsoc{display:flex;gap:.4rem;flex-wrap:wrap;}
+.fsb{width:36px;height:36px;border:1px solid rgba(58,51,40,.6);display:flex;align-items:center;justify-content:center;font-family:'Courier Prime',monospace;font-size:.68rem;color:var(--td);background:none;cursor:pointer;transition:all .2s;text-decoration:none;}
+.fsb:hover{border-color:var(--rm);color:var(--aged);}
+.fc h4{font-family:'Courier Prime',monospace;font-size:.63rem;letter-spacing:.25em;text-transform:uppercase;color:var(--rm);margin-bottom:1.1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(58,51,40,.5);}
+.fc ul{list-style:none;}.fc li{margin-bottom:.55rem;}
+.fc button{background:none;border:none;cursor:pointer;font-family:'Lora',serif;font-size:.84rem;color:var(--td);transition:color .2s;text-align:left;padding:0;}
+.fc button:hover{color:var(--aged);}
+.fbot{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(58,51,40,.4);padding-top:2rem;}
+.fbot p{font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.1em;color:rgba(90,80,64,.5);text-transform:uppercase;}
+.fbot a{color:var(--td);text-decoration:none;}
+
+/* ── ANIMATIONS ─────────────────────────────────────────────────────── */
+.fu{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+.fu.in{opacity:1;transform:translateY(0);}
+.fu:nth-child(2){transition-delay:.1s;}.fu:nth-child(3){transition-delay:.2s;}
+.fu:nth-child(4){transition-delay:.3s;}.fu:nth-child(5){transition-delay:.4s;}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+@media(max-width:960px){
+  .hin,.g2{grid-template-columns:1fr;gap:2.5rem;}
+  .hvis,.hero::after{display:none;}
+  .g3,.g4{grid-template-columns:1fr 1fr;}
+  .fg{grid-template-columns:1fr 1fr;}
+  .nl{display:none;}
+  .gr{grid-template-columns:80px 1fr;}.gr>*:last-child{grid-column:1/-1;}
+}
+@media(max-width:540px){
+  .g3,.g4,.fg{grid-template-columns:1fr;}
+  .statsbar{flex-direction:column;align-items:center;gap:1.5rem;}
+  .si::before{display:none;}
+  .gr{grid-template-columns:1fr;}
+}
+
+/* ── UTILITY ─────────────────────────────────────────────────────────── */
+.body-text{font-size:.97rem;color:var(--tm);line-height:1.8;margin-bottom:1.2rem;}
+.tag-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(122,16,16,.12);border:1px solid rgba(122,16,16,.3);padding:.3rem .8rem;font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--aged);text-transform:uppercase;}
+.flex-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;}
+.cent{text-align:center;}
+.mt3{margin-top:3rem;}.mb2{margin-bottom:2rem;}.mt2{margin-top:2rem;}
+hr.div{border:none;border-top:1px solid rgba(58,51,40,.5);margin:3rem 0;}
+
+/* ── PAGES (hide all, show current) ─────────────────────────────────── */
+.page{display:none;}.page.active{display:block;}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════ NAV -->
+<nav id="nav">
+  <button class="nb" onclick="go('home')">Oz Soundz<em>Records</em></button>
+  <ul class="nl">
+    <li><button class="nb2" onclick="go('home')">Home</button></li>
+    <li class="hd">
+      <button class="nb2" onclick="go('about')">About Us</button>
+      <div class="dd">
+        <button onclick="go('about')">About Us</button>
+        <button onclick="go('purpose')">Our Purpose</button>
+        <button onclick="go('vision')">Our Vision</button>
+        <button onclick="go('team')">Our Team</button>
+      </div>
+    </li>
+    <li class="hd">
+      <button class="nb2" onclick="go('label')">The Label</button>
+      <div class="dd">
+        <button onclick="go('how-it-works')">How It Works</button>
+        <button onclick="go('what-we-offer')">What We Offer</button>
+        <button onclick="go('royalties')">Royalties &amp; Deals</button>
+        <button onclick="go('faq')">FAQ</button>
+      </div>
+    </li>
+    <li class="hd">
+      <button class="nb2" onclick="go('artists')">Artists</button>
+      <div class="dd">
+        <button onclick="go('roster')">Our Roster</button>
+        <button onclick="go('featured')">Featured Artists</button>
+        <button onclick="go('submit')">Submit Your Music</button>
+      </div>
+    </li>
+    <li class="hd">
+      <button class="nb2" onclick="go('community')">Community</button>
+      <div class="dd">
+        <button onclick="go('sponsorship')">Artist Sponsorship</button>
+        <button onclick="go('gigs')">Gig Calendar</button>
+        <button onclick="go('gig-photos')">Gig Photos &amp; Videos</button>
+      </div>
+    </li>
+    <li class="hd">
+      <button class="nb2" onclick="go('media')">Our Media</button>
+      <div class="dd">
+        <button onclick="go('blogs')">Blogs &amp; Articles</button>
+        <button onclick="go('social')">Social Media</button>
+        <button onclick="go('podcast')">Podcast</button>
+      </div>
+    </li>
+    <li><button class="nb2" onclick="go('group')">The Group</button></li>
+    <li><button class="nb2 ncta" onclick="go('contact')">Contact</button></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════ SHARED CHUNKS -->
+<!-- Ticker (reused on every page via JS clone) -->
+<template id="tpl-ticker">
+  <div class="ticker">
+    <div class="ttrack">
+      <span>◆ Independent Australian Record Label ◆ Coming 2030+ ◆ Artist Development · Distribution · Branding ◆ Built By Musicians For Musicians ◆ 100% Aussie Owned ◆ Grassroots. Underground. Unstoppable. ◆</span>
+      <span>◆ Independent Australian Record Label ◆ Coming 2030+ ◆ Artist Development · Distribution · Branding ◆ Built By Musicians For Musicians ◆ 100% Aussie Owned ◆ Grassroots. Underground. Unstoppable. ◆</span>
+    </div>
+  </div>
+</template>
+
+<template id="tpl-stats">
+  <div class="statsbar">
+    <div class="si fu"><div class="sn">2030+</div><div class="sl">Launch Target</div></div>
+    <div class="si fu"><div class="sn">100%</div><div class="sl">Indie Focused</div></div>
+    <div class="si fu"><div class="sn">$0</div><div class="sl">Artist Sign-On Fees</div></div>
+    <div class="si fu"><div class="sn">Yours</div><div class="sl">Creative Control</div></div>
+  </div>
+</template>
+
+<template id="tpl-footer">
+  <footer>
+    <div class="fg">
+      <div>
+        <span class="flogo">Oz Soundz<em>Records</em></span>
+        <p class="fbod">An independent Australian record label dedicated to elevating grassroots artists. Built on fairness, transparency, and genuine belief in the music you make. Coming 2030+. Part of The Oz Soundz Group.</p>
+        <div class="fsoc">
+          <a class="fsb" href="https://facebook.com/ozsoundz" target="_blank">FB</a>
+          <a class="fsb" href="https://instagram.com/ozsoundz" target="_blank">IG</a>
+          <a class="fsb" href="https://tiktok.com/@ozsoundz" target="_blank">TT</a>
+          <a class="fsb" href="https://youtube.com/@ozsoundz" target="_blank">YT</a>
+          <a class="fsb" href="https://x.com/ozsoundz" target="_blank">X</a>
+        </div>
+      </div>
+      <div class="fc"><h4>The Label</h4><ul>
+        <li><button onclick="go('about')">About Us</button></li>
+        <li><button onclick="go('purpose')">Our Purpose</button></li>
+        <li><button onclick="go('how-it-works')">How It Works</button></li>
+        <li><button onclick="go('what-we-offer')">What We Offer</button></li>
+        <li><button onclick="go('royalties')">Royalties &amp; Deals</button></li>
+        <li><button onclick="go('faq')">FAQ</button></li>
+      </ul></div>
+      <div class="fc"><h4>Artists</h4><ul>
+        <li><button onclick="go('roster')">Our Roster</button></li>
+        <li><button onclick="go('featured')">Featured Artists</button></li>
+        <li><button onclick="go('submit')">Submit Your Music</button></li>
+        <li><button onclick="go('sponsorship')">Artist Sponsorship</button></li>
+        <li><button onclick="go('gigs')">Gig Calendar</button></li>
+      </ul></div>
+      <div class="fc"><h4>Connect</h4><ul>
+        <li><button onclick="go('blogs')">Blogs &amp; Articles</button></li>
+        <li><button onclick="go('social')">Social Media</button></li>
+        <li><button onclick="go('podcast')">Podcast</button></li>
+        <li><button onclick="go('group')">The Oz Soundz Group</button></li>
+        <li><button onclick="go('contact')">Contact Us</button></li>
+      </ul></div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 Oz Soundz Records · A subsidiary of <a href="https://vestinex.com.au" target="_blank">Vestinex Pty Ltd</a> · ABN: 45 147 744 858</p>
+      <p>Sydney, NSW, Australia · <a href="mailto:records@ozsoundz.com.au">records@ozsoundz.com.au</a></p>
+    </div>
+  </footer>
+</template>
+
+<!-- ═══════════════════════════════════════════════════════════ PAGE: HOME -->
+<div id="page-home" class="page">
+  <section class="hero">
+    <div class="hacc"></div>
+    <div class="hin">
+      <div>
+        <div class="htag">Oz Soundz Group · Sydney Australia · Coming 2030+</div>
+        <div class="stamp"><span class="sdot"></span>Future Operation — Expressions of Interest Open Now</div>
+        <h1 class="htit">
+          <span class="ls">Oz Soundz</span>
+          <span class="lr">Records</span>
+          <span class="lg">The Label That Gets It</span>
+        </h1>
+        <p class="hbod">An independent Australian record label built for the underground. Fair deals. Real support. Artist-first everything. We're building the label we always wished existed.</p>
+        <div class="hbtns">
+          <button class="btn br" onclick="go('submit')">Submit Your Music</button>
+          <button class="btn bg" onclick="go('how-it-works')">How It Works</button>
+        </div>
+      </div>
+      <div class="hvis">
+        <div class="vwrap">
+          <div class="vring"></div>
+          <div class="vouter">
+            <div class="vlabel">
+              <div class="vln">Oz Soundz<em>Records</em></div>
+              <div class="vhole"></div>
+            </div>
+            <div class="vshine"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div data-ticker></div>
+  <div data-stats></div>
+
+  <section class="sec alt">
+    <div class="con">
+      <div class="g2 g2c">
+        <div>
+          <div class="ey">A Label That Gets It</div>
+          <h2 class="st">Built From<br/><em>The Scene Up</em></h2>
+          <p class="body-text">Oz Soundz Records will be an independent Australian record label dedicated to elevating the Oz Soundz community. We're not here to take everything — we're here to build something together with you.</p>
+          <p class="body-text">We understand the grassroots journey because we are part of it. This is a label built on fairness, transparency, and genuine belief in the artists we sign.</p>
+          <div class="wf"><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div></div>
+          <div class="flex-btns">
+            <button class="btn br" onclick="go('about')">Our Story</button>
+            <button class="btn bg" onclick="go('purpose')">Our Purpose</button>
+          </div>
+        </div>
+        <div>
+          <div class="mani">
+            <p class="manit">"The future of the industry lies in supporting the underdogs. We don't just sign artists — we back humans."</p>
+            <p class="mania">— Oz Soundz Records Manifesto</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec drk">
+    <div class="con">
+      <div class="ey">What's Planned</div>
+      <h2 class="st">What Oz Soundz Records <span class="gh">Offers</span></h2>
+      <div class="g4 mt3">
+        <div class="card fu"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🎤</span><div class="ctag">Development</div><div class="ctit">Artist Development</div><p class="cbod">Long-term career mentorship and creative direction support. We invest in your growth, not just your next single.</p></div>
+        <div class="card fu"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🌏</span><div class="ctag">Distribution</div><div class="ctit">Global Distribution</div><p class="cbod">Getting your music onto Spotify, Apple Music, and into stores worldwide. Australian artists deserve global ears.</p></div>
+        <div class="card fu"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🎨</span><div class="ctag">Identity</div><div class="ctit">Branding &amp; Identity</div><p class="cbod">Building the visual identity, story, and presence that connects with audiences and makes your art unforgettable.</p></div>
+        <div class="card fu"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">💸</span><div class="ctag">Funding</div><div class="ctit">Sponsorship Access</div><p class="cbod">Linking signed artists with the Oz Soundz sponsorship ecosystem — funding programs for real indie careers.</p></div>
+      </div>
+      <div class="cent mt3"><button class="btn bg" onclick="go('what-we-offer')">See Everything We Offer</button></div>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <div class="con">
+      <div class="ey">The Roster</div>
+      <h2 class="st">Artists<br/><em>Coming 2030+</em></h2>
+      <p class="body-text" style="max-width:580px;margin-bottom:2.5rem">We're building our roster from the ground up. Are you an independent Australian artist? We want to hear what you're making. Applications open 2030.</p>
+      <div class="g3">
+        <div class="ac fu"><div class="agen">Rock / Grunge</div><div class="anam">Your Band Here</div><div class="aloc">📍 Australia</div><p class="abio">We're actively seeking emerging Australian artists across all genres. Raw, real, and committed to their craft.</p><div class="asta open"><span class="adot"></span>Accepting Submissions 2030+</div></div>
+        <div class="ac fu"><div class="agen">Indie / Alt</div><div class="anam">Your Project</div><div class="aloc">📍 Australia</div><p class="abio">Solo artists, bands, producers, and singer-songwriters — if you've got something worth saying, we want to hear it.</p><div class="asta open"><span class="adot"></span>Accepting Submissions 2030+</div></div>
+        <div class="ac fu"><div class="agen">Any Genre</div><div class="anam">The Next Big Thing</div><div class="aloc">📍 Anywhere in AU</div><p class="abio">Genre doesn't matter. Passion does. Submit your music and let's start a conversation about your future.</p><div class="asta open"><span class="adot"></span>Accepting Submissions 2030+</div></div>
+      </div>
+      <div class="cent mt3"><button class="btn br" onclick="go('submit')">Register Your Interest Now</button></div>
+    </div>
+  </section>
+
+  <section class="sec drk">
+    <div class="con">
+      <div class="ey">The Community</div>
+      <h2 class="st">More Than<br/>A <em>Label</em></h2>
+      <div class="g4 mt3">
+        <div class="card fu" onclick="go('featured')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🎤</span><div class="ctit">Artist Spotlights</div><p class="cbod">Your story told across the full Oz Soundz media ecosystem to new audiences every week.</p></div>
+        <div class="card fu" onclick="go('gigs')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🗓️</span><div class="ctit">Gig Calendar</div><p class="cbod">We promote your shows to the wider Oz Soundz community — more eyes on your live music.</p></div>
+        <div class="card fu" onclick="go('blogs')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">📝</span><div class="ctit">Blogs &amp; Press</div><p class="cbod">Written features, reviews, and artist deep-dives published on our blog and socials.</p></div>
+        <div class="card fu" onclick="go('podcast')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🎧</span><div class="ctit">Podcast Features</div><p class="cbod">Appear on Oz Soundz Unleashed — our Australian indie music podcast.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ctaban">
+    <h2>Watch This Space</h2>
+    <p>Register your interest now. Be first in line when applications open in 2030.</p>
+    <button class="bdark" onclick="go('contact')">Register Interest</button>
+  </div>
+
+  <section class="sec alt">
+    <div class="con">
+      <div class="ey">The Oz Soundz Group</div>
+      <h2 class="st">One Ecosystem.<br/><em>Three Arms.</em></h2>
+      <p class="body-text" style="max-width:560px">Oz Soundz Records is one part of a bigger mission — a fully connected group of businesses dedicated to supporting every stage of an independent Australian artist's journey.</p>
+      <div class="g3 mt3">
+        <button class="gc fu" onclick="go('group')"><span class="gcic">🎸</span><div class="gctg">Operational Now</div><div class="gcnm">Music &amp; Audio</div><p class="gcbd">Quality instruments and gear at honest prices. By players, for players.</p></button>
+        <button class="gc fu" onclick="go('group')"><span class="gcic">🎙️</span><div class="gctg">Coming 2027/28</div><div class="gcnm">Oz Soundz Studios</div><p class="gcbd">Professional recording, mixing &amp; mastering for indie artists.</p></button>
+        <button class="gc fu" onclick="go('home')"><span class="gcic">💿</span><div class="gctg">You're Here · Coming 2030+</div><div class="gcnm">Oz Soundz Records</div><p class="gcbd">The indie label that actually has your back — artist-first deals, fair royalties.</p></button>
+      </div>
+    </div>
+  </section>
+  <div data-footer></div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ PAGE: ABOUT -->
+<div id="page-about" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span style="color:var(--td)">About Us</span></div><h1 class="pht">About <em>Us</em></h1><p class="phs">A family-founded, artist-first indie label built from the grassroots Australian music scene because we've always been in it.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2 g2c">
+      <div>
+        <div class="ey">Who We Are</div>
+        <h2 class="st">Born From<br/><em>The Scene</em></h2>
+        <p class="body-text">Oz Soundz Records was established as part of The Oz Soundz Group — a family-founded, musician-driven organisation based in Sydney, NSW. Founded by Jason "Plummo" Plumridge and his family, the group has deep, decades-long roots in the Australian grassroots music community.</p>
+        <p class="body-text">We're not a corporate label. We're not here to take your masters and ghost you. Oz Soundz Records is being built to be the label we always wished existed when we were coming up through the scene.</p>
+        <p class="body-text">A subsidiary of Vestinex Pty Ltd (ABN: 45 147 744 858), Oz Soundz Records is 100% Australian owned and operated — and proudly intends to stay that way.</p>
+        <div class="flex-btns">
+          <button class="btn br" onclick="go('purpose')">Our Purpose</button>
+          <button class="btn bg" onclick="go('team')">The Team</button>
+        </div>
+      </div>
+      <div>
+        <div class="mani mb2">
+          <p class="manit">"Whilst new in the market, The Oz Soundz Group has connection to the Music &amp; Audio Industry at the 'grass roots local level' for more than 4 decades."</p>
+          <p class="mania">— Jason "Plummo" Plumridge, Founder</p>
+        </div>
+        <div class="card"><div class="ctag">The Family</div><p class="cbod">Our founder studied music at Newcastle Conservatorium. His eldest son is an accomplished keyboardist — his band released an EP in 2024. His daughter is a committed singer. His youngest son plays trombone and drums. Music isn't the business at Oz Soundz. It's the whole point.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <div class="ctaban"><h2>Be Part of Something Real</h2><p>We're building this with the community, not for the industry.</p><button class="bdark" onclick="go('contact')">Get In Touch</button></div>
+  <div data-footer></div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ PAGE: PURPOSE -->
+<div id="page-purpose" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('about')">About Us</span><span class="bc-sep"> › </span><span style="color:var(--td)">Our Purpose</span></div><h1 class="pht">Our <em>Purpose</em></h1><p class="phs">Music is the lifeblood of culture. We exist to protect it and elevate the humans who create it.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2 g2c">
+      <div>
+        <div class="ey">Why We Exist</div>
+        <h2 class="st">Beyond<br/><em>Business</em></h2>
+        <p class="body-text">Our purpose goes beyond releasing records. We exist to reshape the ecosystem that Australian indie artists operate in — removing barriers, providing resources, and building a community where when one artist succeeds, the whole scene benefits.</p>
+        <p class="body-text">Music is the blood of life and the soul of the planet. The Oz Soundz Group was created by Musicians for Musicians — to support creative endeavours and bring peace and life to all through the medium of music.</p>
+      </div>
+      <div><div class="mani"><p class="manit">"Created by musicians. For musicians. Music is the blood of life and the soul of the planet."</p><p class="mania">— Oz Soundz Group Manifesto</p></div></div>
+    </div>
+    <div class="g3 mt3">
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">💪</span><div class="ctit">Empower Indie Talent</div><p class="cbod">Providing the resources needed for indie artists to thrive in a competitive landscape — without selling their soul to do it.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🎵</span><div class="ctit">Promote Cultural Connection</div><p class="cbod">Using music to bring peace, connection, and meaning to humanity. Sound has always been the universal language.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🔄</span><div class="ctit">Support the Full Lifecycle</div><p class="cbod">From your first rehearsal to final distribution — we are here at every step of the artistic journey.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🌱</span><div class="ctit">Sustainable Community</div><p class="cbod">Creating an ecosystem where one artist's success lifts the whole community. That's the Oz Soundz way.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">💰</span><div class="ctit">Accessible &amp; Affordable</div><p class="cbod">Professional label support shouldn't be reserved for major label interest. We price fairly because we believe in access.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🇦🇺</span><div class="ctit">100% Australian</div><p class="cbod">Proudly owned and operated in Australia. We invest in Australian artists and keep that investment in our creative economy.</p></div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ PAGE: VISION -->
+<div id="page-vision" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('about')">About Us</span><span class="bc-sep"> › </span><span style="color:var(--td)">Our Vision</span></div><h1 class="pht">Our <em>Vision</em></h1><p class="phs">Where we're headed and the mark we intend to leave on Australian music.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2 g2c">
+      <div>
+        <div class="ey">The Big Picture</div>
+        <h2 class="st">Global Excellence.<br/><em>Australian Soul.</em></h2>
+        <p class="body-text">Our vision is to see Oz Soundz Records become a recognised and trusted brand in the music, audio, and recording industry in Australia — and ultimately globally — always championing Australian independent music on the world stage.</p>
+        <p class="body-text">We want to bridge the gap between the local grassroots scene and the global stage. We commit to supporting indie musicians with professional tools and industry guidance to launch successful careers.</p>
+        <button class="btn br mt2" onclick="go('how-it-works')">See How The Label Works</button>
+      </div>
+      <div>
+        <div class="prs fu"><div class="prn">01</div><div><div class="prl">Phase 1</div><div class="prt">Establish &amp; Build Community</div><p class="prb">2025–2029: Build the Oz Soundz community through the Group — music retail, studios, media, and grassroots support.</p><span style="display:inline-block;margin-top:.5rem;font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--yel)">● In Progress</span></div></div>
+        <div class="prs fu"><div class="prn">02</div><div><div class="prl">Phase 2</div><div class="prt">Launch Oz Soundz Records</div><p class="prb">2030: Open applications, sign first roster of Australian independent artists, release first titles.</p><span style="display:inline-block;margin-top:.5rem;font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--td)">○ Planned</span></div></div>
+        <div class="prs fu"><div class="prn">03</div><div><div class="prl">Phase 3</div><div class="prt">National Presence</div><p class="prb">2030–2032: Become a recognised name in Australian indie music with touring, press, and community events.</p><span style="display:inline-block;margin-top:.5rem;font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--td)">○ Planned</span></div></div>
+        <div class="prs fu"><div class="prn">04</div><div><div class="prl">Phase 4</div><div class="prt">Global Reach</div><p class="prb">2033+: Australian music on the global stage — distributed worldwide, streaming everywhere, heard by everyone.</p><span style="display:inline-block;margin-top:.5rem;font-family:'Courier Prime',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--td)">○ Planned</span></div></div>
+      </div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ PAGE: TEAM -->
+<div id="page-team" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('about')">About Us</span><span class="bc-sep"> › </span><span style="color:var(--td)">Our Team</span></div><h1 class="pht">Our <em>Team</em></h1><p class="phs">The family and collaborators building Oz Soundz Records from the ground up.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g3">
+      <div class="ac fu" style="text-align:center;padding:2.5rem 2rem">
+        <div style="width:90px;height:90px;border-radius:50%;background:var(--ash);border:2px solid var(--rd);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.2rem;box-shadow:0 0 18px rgba(122,16,16,.2)">👨‍🎸</div>
+        <div style="font-family:'Teko',sans-serif;font-weight:700;font-size:1.2rem;color:var(--tw);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.2rem">Jason "Plummo" Plumridge</div>
+        <div style="font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--rm);text-transform:uppercase;margin-bottom:.8rem">Founder &amp; Director</div>
+        <p style="font-size:.85rem;color:var(--td);line-height:1.65">Former student of Newcastle Conservatorium. 40+ years in the grassroots Australian music scene. Founded The Oz Soundz Group to give back to the community that shaped him.</p>
+      </div>
+      <div class="ac fu" style="text-align:center;padding:2.5rem 2rem">
+        <div style="width:90px;height:90px;border-radius:50%;background:var(--ash);border:2px solid var(--rd);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.2rem;box-shadow:0 0 18px rgba(122,16,16,.2)">🎹</div>
+        <div style="font-family:'Teko',sans-serif;font-weight:700;font-size:1.2rem;color:var(--tw);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.2rem">The Plumridge Family</div>
+        <div style="font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--rm);text-transform:uppercase;margin-bottom:.8rem">Music, Heart &amp; Soul</div>
+        <p style="font-size:.85rem;color:var(--td);line-height:1.65">A family where music is genuinely in the blood — accomplished keyboardists, singers, drummers, and trombonists. Every family member contributes to the Oz Soundz vision.</p>
+      </div>
+      <div class="ac fu" style="text-align:center;padding:2.5rem 2rem">
+        <div style="width:90px;height:90px;border-radius:50%;background:var(--ash);border:2px solid var(--rd);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 1.2rem;box-shadow:0 0 18px rgba(122,16,16,.2)">📋</div>
+        <div style="font-family:'Teko',sans-serif;font-weight:700;font-size:1.2rem;color:var(--tw);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.2rem">A&amp;R Team</div>
+        <div style="font-family:'Courier Prime',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--rm);text-transform:uppercase;margin-bottom:.8rem">Coming 2029/30</div>
+        <p style="font-size:.85rem;color:var(--td);line-height:1.65">We're building our A&amp;R team ahead of the 2030 launch. If you're a passionate, skilled music industry professional interested in joining the Oz Soundz Records family, reach out.</p>
+      </div>
+    </div>
+    <div class="card mt3 cent" style="padding:3rem">
+      <span style="font-size:2rem;display:block;margin-bottom:.8rem">📣</span>
+      <div class="ctit" style="font-size:1.6rem;margin-bottom:.8rem">Join The Team</div>
+      <p class="cbod" style="max-width:480px;margin:0 auto 1.5rem">We're always open to conversations with passionate music industry professionals, A&amp;R scouts, and community builders who share our vision for Australian indie music.</p>
+      <button class="btn br" onclick="go('contact')">Get In Touch</button>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════ PAGE: LABEL OVERVIEW -->
+<div id="page-label" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span style="color:var(--td)">The Label</span></div><h1 class="pht">The <em>Label</em></h1><p class="phs">Everything you need to know about how Oz Soundz Records works — clearly, honestly, with no spin.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g3">
+      <div class="card fu" onclick="go('how-it-works')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">⚙️</span><div class="ctag">Process</div><div class="ctit">How It Works</div><p class="cbod">Step-by-step from submission to signing to release. No smoke and mirrors.</p></div>
+      <div class="card fu" onclick="go('what-we-offer')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🎁</span><div class="ctag">Services</div><div class="ctit">What We Offer</div><p class="cbod">The full suite of label support — development, distribution, branding, press, and more.</p></div>
+      <div class="card fu" onclick="go('royalties')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">💸</span><div class="ctag">Deals</div><div class="ctit">Royalties &amp; Deals</div><p class="cbod">Transparent deal structures. Your masters, your career. No traps.</p></div>
+      <div class="card fu" onclick="go('faq')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">❓</span><div class="ctag">Information</div><div class="ctit">FAQ</div><p class="cbod">Your questions answered — honestly and completely, without the corporate speak.</p></div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════ PAGE: HOW IT WORKS -->
+<div id="page-how-it-works" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('label')">The Label</span><span class="bc-sep"> › </span><span style="color:var(--td)">How It Works</span></div><h1 class="pht">How It <em>Works</em></h1><p class="phs">No smoke and mirrors. Here's exactly what getting signed to Oz Soundz Records looks like.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2">
+      <div>
+        <div class="ey">The Process</div>
+        <h2 class="st">Simple.<br/>Fair.<br/><em>Transparent.</em></h2>
+        <p class="body-text">We're building the process we always wished a label would offer. No hidden clauses, no power-imbalance deals, no signing away your whole catalogue for a small advance. Here's how it works.</p>
+        <div class="mani mt2"><p class="manit">"We won't be a label that takes everything. We'll be a partnership built on fairness, transparency, and genuine belief."</p><p class="mania">— Oz Soundz Records Label Philosophy</p></div>
+      </div>
+      <div>
+        <div class="prs fu"><div class="prn">01</div><div><div class="prl">Step 1</div><div class="prt">Submit Your Music</div><p class="prb">Use our submission form to send us your music, your story, and what you're looking for. No fee. No gatekeepers.</p></div></div>
+        <div class="prs fu"><div class="prn">02</div><div><div class="prl">Step 2</div><div class="prt">We Listen — For Real</div><p class="prb">Every submission gets listened to by a real person who gives a damn. You'll hear back regardless of the outcome.</p></div></div>
+        <div class="prs fu"><div class="prn">03</div><div><div class="prl">Step 3</div><div class="prt">Conversation</div><p class="prb">If we're interested, we have a real conversation. No pressure, no contracts waved in your face — just a genuine chat.</p></div></div>
+        <div class="prs fu"><div class="prn">04</div><div><div class="prl">Step 4</div><div class="prt">Partnership Agreement</div><p class="prb">We build a deal around your specific situation — development, distribution, branding, whatever mix makes sense.</p></div></div>
+        <div class="prs fu"><div class="prn">05</div><div><div class="prl">Step 5</div><div class="prt">We Get to Work</div><p class="prb">Recording support, distribution, branding, press, community promotion — the full Oz Soundz ecosystem working for you.</p></div></div>
+      </div>
+    </div>
+  </div></section>
+  <div class="ctaban"><h2>Ready to Talk?</h2><p>Register your interest now and be first in line when applications open in 2030.</p><button class="bdark" onclick="go('submit')">Submit Your Music</button></div>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════ PAGE: WHAT WE OFFER -->
+<div id="page-what-we-offer" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('label')">The Label</span><span class="bc-sep"> › </span><span style="color:var(--td)">What We Offer</span></div><h1 class="pht">What We <em>Offer</em></h1><p class="phs">The full suite of label support — artist-first, community-backed, fairly priced.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="ey">Label Services</div>
+    <h2 class="st">Everything You Need.<br/><em>Nothing You Don't.</em></h2>
+    <div class="g3 mt3">
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🎤</span><div class="ctag">Core Service</div><div class="ctit">Artist Development</div><p class="cbod">Long-term career mentorship, creative direction, and professional guidance. We invest in the whole artist, not just the next release.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🌏</span><div class="ctag">Core Service</div><div class="ctit">Global Distribution</div><p class="cbod">Your music on Spotify, Apple Music, TIDAL, Amazon Music, YouTube Music, Bandcamp, and physical distribution to Australian record stores.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🎨</span><div class="ctag">Core Service</div><div class="ctit">Branding &amp; Identity</div><p class="cbod">Logos, photography direction, press photography, social media identity, and the visual language that makes your brand recognisable.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">📰</span><div class="ctag">Media</div><div class="ctit">Press &amp; Publicity</div><p class="cbod">PR pitching to Australian music press, blog features on Oz Soundz media channels, podcast appearances, and social media promotion.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🎙️</span><div class="ctag">Media</div><div class="ctit">Podcast Features</div><p class="cbod">Appear on Oz Soundz Unleashed — our Australian music podcast reaching indie music fans across the country.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">📸</span><div class="ctag">Community</div><div class="ctit">Artist Spotlights</div><p class="cbod">Featured artist profiles across all Oz Soundz social channels. We tell your story and push your music to our growing audience.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🏟️</span><div class="ctag">Community</div><div class="ctit">Gig Promotion</div><p class="cbod">Your shows listed and promoted via the Oz Soundz Gig Calendar and social media — helping you build audience at every live show.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">💰</span><div class="ctag">Funding</div><div class="ctit">Sponsorship Access</div><p class="cbod">Signed artists get priority access to the Oz Soundz Artist Sponsorship Program — studio time, gear, and funding support.</p></div>
+      <div class="card fu"><span style="font-size:1.6rem;display:block;margin-bottom:.5rem">🎛️</span><div class="ctag">Production</div><div class="ctit">Studio Access</div><p class="cbod">When Oz Soundz Studios opens in 2027/28, signed artists will receive preferential rates and priority booking for sessions.</p></div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════ PAGE: ROYALTIES -->
+<div id="page-royalties" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('label')">The Label</span><span class="bc-sep"> › </span><span style="color:var(--td)">Royalties &amp; Deals</span></div><h1 class="pht">Royalties <em>&amp; Deals</em></h1><p class="phs">No tricks. No traps. Here's exactly how we structure our deals.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2 g2c">
+      <div>
+        <div class="ey">Our Philosophy</div>
+        <h2 class="st">Your Music.<br/><em>Your Masters.</em></h2>
+        <p class="body-text">The major label model is broken. Oz Soundz Records is being built on an entirely different foundation — deal structures that respect artists, protect their creative work, and ensure they share meaningfully in the success they create.</p>
+        <p class="body-text">Specific deal terms will be negotiated individually with each artist. Our exact royalty splits and deal structures will be published publicly before we open applications in 2030.</p>
+        <div class="mani mt2"><p class="manit">"This won't be a label that takes everything — it'll be a partnership built on fairness and genuine belief in the artists we work with."</p><p class="mania">— Oz Soundz Records</p></div>
+      </div>
+      <div>
+        <div class="card fu mb2" style="padding:1.5rem"><span style="font-size:1.4rem;display:inline;margin-right:.5rem">📜</span><span class="ctit" style="font-size:1rem;display:inline">Artist Retains Masters</span><p class="cbod" style="margin-top:.5rem">By default, artists retain ownership of their master recordings. Any co-ownership arrangement will be explicit, negotiated, and fair.</p></div>
+        <div class="card fu mb2" style="padding:1.5rem"><span style="font-size:1.4rem;display:inline;margin-right:.5rem">💸</span><span class="ctit" style="font-size:1rem;display:inline">Transparent Royalty Splits</span><p class="cbod" style="margin-top:.5rem">Our royalty percentages will be published publicly before launch. No hidden deductions. No cross-collateralisation without full artist understanding.</p></div>
+        <div class="card fu mb2" style="padding:1.5rem"><span style="font-size:1.4rem;display:inline;margin-right:.5rem">🚪</span><span class="ctit" style="font-size:1rem;display:inline">Exit Rights</span><p class="cbod" style="margin-top:.5rem">Artists have the right to exit their deal under defined circumstances. We're not interested in trapping people — if it's not working, we part ways with dignity.</p></div>
+        <div class="card fu mb2" style="padding:1.5rem"><span style="font-size:1.4rem;display:inline;margin-right:.5rem">✅</span><span class="ctit" style="font-size:1rem;display:inline">Lawyer Up — We Encourage It</span><p class="cbod" style="margin-top:.5rem">We actively encourage every artist to have an independent music lawyer review any deal we offer. Informed artists make better partners.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════ PAGE: FAQ -->
+<div id="page-faq" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('label')">The Label</span><span class="bc-sep"> › </span><span style="color:var(--td)">FAQ</span></div><h1 class="pht">Frequently Asked <em>Questions</em></h1><p class="phs">Everything you want to know about Oz Soundz Records, answered honestly.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con" style="max-width:820px">
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">When can I apply?</div><p class="cbod">Applications open in 2030. Register your interest now via our contact page and you'll be first to know when the door opens.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">Do you charge artists to be signed?</div><p class="cbod">Absolutely not. We will never charge an artist a sign-on fee. Any so-called label that charges you to be signed is not a label — walk away.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">What genres do you accept?</div><p class="cbod">All genres. We care about authenticity, passion, and craft — not whether you fit a commercial format. Rock, folk, hip-hop, electronic, country, metal — bring it all.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">Do I need to be based in a major city?</div><p class="cbod">No. Australia is full of incredible music outside Sydney and Melbourne. We actively want to represent artists from regional and rural communities.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">Will I keep my masters?</div><p class="cbod">By default, yes. We believe artists should own their work. Any arrangement involving shared master ownership will be explicitly negotiated and fully transparent.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">Can I be signed if I already have music out?</div><p class="cbod">Yes. Previous releases don't disqualify you. We're interested in where you're going, not just where you've been.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">What if I already have a manager or booking agent?</div><p class="cbod">Great. We work with existing artist teams. Label support and management aren't mutually exclusive — we prefer artists who already have professional support around them.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">Can unsigned artists access the Oz Soundz community?</div><p class="cbod">Yes! You don't need to be signed. Artist spotlights, the gig calendar, blog features, and sponsorship applications are open to all indie artists.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">How is Oz Soundz Records different from a distributor?</div><p class="cbod">A distributor just gets your music on platforms. We provide artist development, branding, press, community building, and genuine career support alongside distribution.</p></div>
+    <div class="card fu mb2"><div class="ctit" style="margin-bottom:.5rem">What's the Oz Soundz Group?</div><p class="cbod">Oz Soundz Records is one arm of The Oz Soundz Group — a connected ecosystem including Oz Soundz Music &amp; Audio (gear retail) and Oz Soundz Studios (recording studio, coming 2027/28).</p></div>
+    <div class="cent mt3"><p style="font-family:'Lora',serif;font-style:italic;color:var(--tm);margin-bottom:1.5rem">Still have questions? We'd love to hear from you.</p><button class="btn br" onclick="go('contact')">Get In Touch</button></div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════ PAGE: ROSTER -->
+<div id="page-roster" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('artists')">Artists</span><span class="bc-sep"> › </span><span style="color:var(--td)">Our Roster</span></div><h1 class="pht">Our <em>Roster</em></h1><p class="phs">Our artists. Our family. Building from 2030.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div style="text-align:center;padding:4rem 2rem;background:var(--soot);border:1px dashed rgba(58,51,40,.6);max-width:700px;margin:0 auto 3rem">
+      <span style="font-size:4rem;display:block;margin-bottom:1.2rem">💿</span>
+      <h2 style="font-family:'Teko',sans-serif;font-weight:700;font-size:2.5rem;text-transform:uppercase;color:var(--tw);letter-spacing:.04em;margin-bottom:.8rem">Roster Building from 2030</h2>
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--tm);line-height:1.7;margin-bottom:2rem">We're not signing anyone until we're ready to fully support them. Applications open 2030 — register your interest now.</p>
+      <button class="btn br" onclick="go('submit')">Register Interest</button>
+    </div>
+    <div class="ey">Genres We're Seeking</div>
+    <div class="g3">
+      <div class="card fu"><div class="ctag">Accepting 2030+</div><div class="ctit">Rock &amp; Grunge</div><p class="cbod">Raw guitar-driven music with something real to say. Pubs, sweat, and songs that stick.</p></div>
+      <div class="card fu"><div class="ctag">Accepting 2030+</div><div class="ctit">Indie &amp; Alt</div><p class="cbod">Left-of-centre artists who write their own rules and build their own audience.</p></div>
+      <div class="card fu"><div class="ctag">Accepting 2030+</div><div class="ctit">Hip-Hop &amp; Rap</div><p class="cbod">Australian voices with stories worth hearing. Beats that land, bars that stick.</p></div>
+      <div class="card fu"><div class="ctag">Accepting 2030+</div><div class="ctit">Folk &amp; Country</div><p class="cbod">Storytellers, fingerpickers, and voices that make a room go quiet.</p></div>
+      <div class="card fu"><div class="ctag">Accepting 2030+</div><div class="ctit">Electronic &amp; Synth</div><p class="cbod">Producers and beat-makers pushing Australian sound into new territory.</p></div>
+      <div class="card fu"><div class="ctag">Accepting 2030+</div><div class="ctit">Metal &amp; Hardcore</div><p class="cbod">Heavy, loud, and uncompromising. Australia has a world-class heavy music scene — we want to be part of it.</p></div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════ PAGE: FEATURED -->
+<div id="page-featured" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('artists')">Artists</span><span class="bc-sep"> › </span><span style="color:var(--td)">Featured Artists</span></div><h1 class="pht">Featured <em>Artists</em></h1><p class="phs">Spotlight on the Australian grassroots scene. Real artists. No algorithm required.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2 g2c mb2">
+      <div>
+        <div class="ey">The Spotlight</div>
+        <h2 class="st">Your Scene.<br/><em>Your Stage.</em></h2>
+        <p class="body-text">We showcase indie artists across our social channels, blog, and podcast — getting your music in front of new ears. You don't have to be signed to Oz Soundz Records to be featured. This is for the whole community.</p>
+        <p class="body-text">We don't just post a photo. We tell your story, share your sound, and bring new listeners into your world.</p>
+        <button class="btn br mt2" onclick="go('contact')">Apply To Be Featured</button>
+      </div>
+      <div>
+        <div class="card fu mb2" style="padding:1.4rem;display:flex;gap:1rem;align-items:flex-start"><span style="font-size:1.4rem;flex-shrink:0">📸</span><div><div class="ctit" style="font-size:.95rem;margin-bottom:.2rem">Artist Profile &amp; Bio</div><p class="cbod">Full profile across all Oz Soundz platforms with your story, sound, and links.</p></div></div>
+        <div class="card fu mb2" style="padding:1.4rem;display:flex;gap:1rem;align-items:flex-start"><span style="font-size:1.4rem;flex-shrink:0">🎵</span><div><div class="ctit" style="font-size:.95rem;margin-bottom:.2rem">Music Share &amp; Promotion</div><p class="cbod">Your tracks pushed to our growing audience across all social platforms.</p></div></div>
+        <div class="card fu mb2" style="padding:1.4rem;display:flex;gap:1rem;align-items:flex-start"><span style="font-size:1.4rem;flex-shrink:0">📝</span><div><div class="ctit" style="font-size:.95rem;margin-bottom:.2rem">Blog Feature Article</div><p class="cbod">A deep-dive on your journey, your music, and what makes you worth listening to.</p></div></div>
+        <div class="card fu" style="padding:1.4rem;display:flex;gap:1rem;align-items:flex-start"><span style="font-size:1.4rem;flex-shrink:0">🔗</span><div><div class="ctit" style="font-size:.95rem;margin-bottom:.2rem">Links to Your Music</div><p class="cbod">Spotify, Bandcamp, SoundCloud, YouTube — we link it all and drive traffic.</p></div></div>
+      </div>
+    </div>
+    <div style="background:var(--soot);border:1px dashed rgba(58,51,40,.6);padding:3rem;text-align:center">
+      <div style="font-family:'Teko',sans-serif;font-weight:700;font-size:1.5rem;text-transform:uppercase;color:var(--tw);letter-spacing:.05em;margin-bottom:.5rem">🎸 Artists Coming Soon</div>
+      <p style="font-family:'Lora',serif;font-style:italic;color:var(--tm);margin-bottom:1.5rem">We are building our community of featured indie artists. Are you an independent musician?</p>
+      <button class="btn br" onclick="go('contact')">Get Featured</button>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════ PAGE: SUBMIT -->
+<div id="page-submit" class="page">
+  <div class="pgh"><div class="con"><div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('artists')">Artists</span><span class="bc-sep"> › </span><span style="color:var(--td)">Submit Your Music</span></div><h1 class="pht">Submit Your <em>Music</em></h1><p class="phs">Send us your music, your story, and what you're looking for. We're listening.</p></div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2">
+      <div>
+        <div class="ey">Open Submissions</div>
+        <h2 class="st">We Want<br/>To <em>Hear You</em></h2>
+        <p class="body-text">Applications for signing won't formally open until 2030 — but we're taking expressions of interest right now. Submit your music and your story, and we'll be in touch when the time comes.</p>
+        <p class="body-text">In the meantime, we may reach out to feature you on our blog, social channels, or podcast. Being part of the community starts long before any deal is signed.</p>
+        <div class="mani mt2"><p class="manit">"Every submission gets heard by a real person who gives a damn. We'll respond regardless of the outcome."</p><p class="mania">— Oz Soundz Records Submission Promise</p></div>
+      </div>
+      <div id="submit-form">
+        <div class="fld"><label>Your Name / Band Name</label><input type="text" placeholder="Artist or band name"></div>
+        <div class="fld"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+        <div class="fld"><label>Genre / Style</label><input type="text" placeholder="e.g. Indie Rock, Folk-Punk, Experimental"></div>
+        <div class="fld"><label>Location</label><input type="text" placeholder="City / State, Australia"></div>
+        <div class="fld"><label>Links to Your Music</label><input type="text" placeholder="Spotify / Bandcamp / SoundCloud / YouTube"></div>
+        <div class="fld"><label>What Are You Looking For?</label>
+          <select>
+            <option>Label Interest — Signing Enquiry</option>
+            <option>Featured Artist Spotlight</option>
+            <option>Podcast Feature</option>
+            <option>Blog Feature</option>
+            <option>General Expression of Interest</option>
+          </select>
+        </div>
+        <div class="fld"><label>Tell Us Your Story</label><textarea placeholder="Who are you, what are you making, and what are you looking for?"></textarea></div>
+        <button class="btn br" onclick="submitForm('submit-form','submit-thanks')">Submit Music &amp; Story</button>
+      </div>
+      <div id="submit-thanks" style="display:none">
+        <div class="card" style="text-align:center;padding:3rem">
+          <span style="font-size:3rem;display:block;margin-bottom:1rem">🎸</span>
+          <div class="ctit" style="font-size:1.6rem;margin-bottom:.8rem">Music Submitted!</div>
+          <p class="cbod" style="max-width:320px;margin:0 auto 1.5rem">Thanks for reaching out. We'll listen and get back to you. If you don't hear from us within 2–3 weeks, feel free to follow up.</p>
+          <button class="btn bg" onclick="document.getElementById('submit-form').style.display='block';document.getElementById('submit-thanks').style.display='none'">Submit Again</button>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: ARTISTS OVERVIEW -->
+<div id="page-artists" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span style="color:var(--td)">Artists</span></div>
+    <h1 class="pht">The <em>Artists</em></h1>
+    <p class="phs">Our roster, featured artists, and how to get your music heard.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g3">
+      <div class="card fu" onclick="go('roster')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">💿</span><div class="ctag">Roster</div><div class="ctit">Our Roster</div><p class="cbod">The artists signed to Oz Soundz Records. Building from 2030 — see what genres we're seeking right now.</p></div>
+      <div class="card fu" onclick="go('featured')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🎤</span><div class="ctag">Spotlight</div><div class="ctit">Featured Artists</div><p class="cbod">Community spotlights open to all indie artists — not just signed acts. Get your music in front of new ears.</p></div>
+      <div class="card fu" onclick="go('submit')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">📬</span><div class="ctag">Apply</div><div class="ctit">Submit Your Music</div><p class="cbod">Send us your music and story. Applications open 2030 but we're taking expressions of interest right now.</p></div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: COMMUNITY OVERVIEW -->
+<div id="page-community" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span style="color:var(--td)">Community</span></div>
+    <h1 class="pht">The <em>Community</em></h1>
+    <p class="phs">More than a label — a community built around Australian independent music.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g3">
+      <div class="card fu" onclick="go('sponsorship')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">💰</span><div class="ctag">Funding</div><div class="ctit">Artist Sponsorship</div><p class="cbod">We back underdogs. Studio time, gear, and distribution support for emerging Australian artists.</p></div>
+      <div class="card fu" onclick="go('gigs')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🗓️</span><div class="ctag">Live Music</div><div class="ctit">Gig Calendar</div><p class="cbod">Upcoming shows from the Oz Soundz community right across Australia. Get your gig listed.</p></div>
+      <div class="card fu" onclick="go('gig-photos')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">📸</span><div class="ctag">Gallery</div><div class="ctit">Gig Photos &amp; Videos</div><p class="cbod">Relive the moments. Raw, real, and unforgettable live music captured across the country.</p></div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: SPONSORSHIP -->
+<div id="page-sponsorship" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('community')">Community</span><span class="bc-sep"> › </span><span style="color:var(--td)">Artist Sponsorship</span></div>
+    <h1 class="pht">Artist <em>Sponsorship</em></h1>
+    <p class="phs">We invest in the next generation of Australian sound. Here's the program.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="stamp"><span class="sdot"></span>Program Building Now — Launching with the Label in 2030+</div>
+    <div class="g2 g2c">
+      <div>
+        <div class="ey">Artist Sponsorship</div>
+        <h2 class="st">We Back<br/><em>The Underdogs</em></h2>
+        <p class="body-text">At Oz Soundz Records we don't just provide label services — we're building a program to invest in the next generation of Australian sound. Our Artist Sponsorship Program is designed to remove the financial barriers that hold back independent creators.</p>
+        <p class="body-text">We're building a new model of support committed to providing emerging artists with professional resources, studio time, and equipment they need to launch their careers without going broke doing it.</p>
+        <p class="body-text"><strong style="color:var(--aged)">Important:</strong> The sponsorship program is entirely dependent on the volume of sales through the Oz Soundz ecosystem. Every purchase made through Oz Soundz Music &amp; Audio directly funds future artist support. Get the message out.</p>
+        <button class="btn by mt2" onclick="go('contact')">Register Your Interest</button>
+      </div>
+      <div>
+        <div class="card fu" style="margin-bottom:1rem"><span style="font-size:1.4rem;display:block;margin-bottom:.4rem">🎛️</span><div class="ctag">Studio Access</div><div class="ctit">Professional Recording</div><p class="cbod">Sponsored access to Oz Soundz Studios (opening 2027/28) for tracking, mixing, and mastering sessions.</p></div>
+        <div class="card fu" style="margin-bottom:1rem"><span style="font-size:1.4rem;display:block;margin-bottom:.4rem">🎸</span><div class="ctag">Gear</div><div class="ctit">Quality Equipment</div><p class="cbod">High-quality instruments and audio gear from Oz Soundz Music &amp; Audio — selected for the needs of each sponsored artist.</p></div>
+        <div class="card fu" style="margin-bottom:1rem"><span style="font-size:1.4rem;display:block;margin-bottom:.4rem">💿</span><div class="ctag">Label Support</div><div class="ctit">Distribution &amp; Branding</div><p class="cbod">Selected artists may receive distribution support, branding assistance, and press through Oz Soundz Records channels.</p></div>
+        <div class="card fu"><span style="font-size:1.4rem;display:block;margin-bottom:.4rem">📣</span><div class="ctag">Promotion</div><div class="ctit">Community Promotion</div><p class="cbod">Artist spotlights, blog features, podcast appearances, and gig promotion across all Oz Soundz platforms.</p></div>
+      </div>
+    </div>
+    <div style="margin-top:3rem;background:var(--soot);border:1px solid rgba(58,51,40,.6);padding:3rem">
+      <div class="ey">Who Can Apply</div>
+      <h3 style="font-family:'Teko',sans-serif;font-weight:700;font-size:2.5rem;text-transform:uppercase;color:var(--tw);letter-spacing:.04em;margin-bottom:2rem">Are You An Underdog?</h3>
+      <div class="g3">
+        <div style="text-align:center"><span style="font-size:2.5rem;display:block;margin-bottom:.8rem">🎤</span><div style="font-family:'Teko',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--tw);letter-spacing:.05em;margin-bottom:.5rem">Solo Artists</div><p style="font-size:.85rem;color:var(--td);line-height:1.65">Singer-songwriters looking to record their debut EP or album or establish their sound professionally.</p></div>
+        <div style="text-align:center"><span style="font-size:2.5rem;display:block;margin-bottom:.8rem">🎸</span><div style="font-family:'Teko',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--tw);letter-spacing:.05em;margin-bottom:.5rem">Live Performers</div><p style="font-size:.85rem;color:var(--td);line-height:1.65">Bands and performers in need of professional equipment support or studio time to capture their live sound.</p></div>
+        <div style="text-align:center"><span style="font-size:2.5rem;display:block;margin-bottom:.8rem">🎬</span><div style="font-family:'Teko',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--tw);letter-spacing:.05em;margin-bottom:.5rem">Creative Professionals</div><p style="font-size:.85rem;color:var(--td);line-height:1.65">Music, film, and television creatives who need professional support to reach their audience.</p></div>
+      </div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: GIGS -->
+<div id="page-gigs" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('community')">Community</span><span class="bc-sep"> › </span><span style="color:var(--td)">Gig Calendar</span></div>
+    <h1 class="pht">Gig <em>Calendar</em></h1>
+    <p class="phs">Live music happening now. Oz Soundz community shows across Australia.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="ey">Upcoming Shows</div>
+    <h2 class="st">Get Out &amp;<br/><em>See Live Music</em></h2>
+    <p class="body-text" style="max-width:580px;margin-bottom:2.5rem">These listings demonstrate the format — real gig listings will populate this page once our community is operational. Want your gig listed? Get in touch.</p>
+    <div class="gr fu"><div class="gig-date"><div class="gday">14</div><div class="gmon">Jul 26</div></div><div><div class="gart">The Static Line</div><div class="gven">The Lansdowne Hotel</div><div class="gcit">📍 Sydney, NSW</div></div><div class="gtag">Indie Rock</div></div>
+    <div class="gr fu"><div class="gig-date"><div class="gday">19</div><div class="gmon">Jul 26</div></div><div><div class="gart">Ruin Parade</div><div class="gven">Crowbar Brisbane</div><div class="gcit">📍 Brisbane, QLD</div></div><div class="gtag">Post-Punk</div></div>
+    <div class="gr fu"><div class="gig-date"><div class="gday">26</div><div class="gmon">Jul 26</div></div><div><div class="gart">Hollow Harbour</div><div class="gven">Cherry Bar</div><div class="gcit">📍 Melbourne, VIC</div></div><div class="gtag">Alt Folk</div></div>
+    <div class="gr fu"><div class="gig-date"><div class="gday">02</div><div class="gmon">Aug 26</div></div><div><div class="gart">The Static Line</div><div class="gven">The Gov</div><div class="gcit">📍 Adelaide, SA</div></div><div class="gtag">Indie Rock</div></div>
+    <div class="gr fu"><div class="gig-date"><div class="gday">09</div><div class="gmon">Aug 26</div></div><div><div class="gart">Dust &amp; Wire</div><div class="gven">Jive</div><div class="gcit">📍 Adelaide, SA</div></div><div class="gtag">Country Rock</div></div>
+    <div class="gr fu"><div class="gig-date"><div class="gday">15</div><div class="gmon">Aug 26</div></div><div><div class="gart">Ruin Parade</div><div class="gven">The Tote</div><div class="gcit">📍 Melbourne, VIC</div></div><div class="gtag">Post-Punk</div></div>
+    <div class="gr fu"><div class="gig-date"><div class="gday">23</div><div class="gmon">Aug 26</div></div><div><div class="gart">Various Artists</div><div class="gven">OzSoundzFest Stage</div><div class="gcit">📍 Sydney, NSW</div></div><div class="gtag">Community Gig</div></div>
+    <div class="cent mt3"><button class="btn br" onclick="go('contact')">Submit Your Gig</button></div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: GIG PHOTOS -->
+<div id="page-gig-photos" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('community')">Community</span><span class="bc-sep"> › </span><span style="color:var(--td)">Gig Photos &amp; Videos</span></div>
+    <h1 class="pht">Gig Photos <em>&amp; Videos</em></h1>
+    <p class="phs">Relive the moments. The raw, the real, the unforgettable.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div style="background:var(--soot);border:1px dashed rgba(58,51,40,.6);padding:4rem 2rem;text-align:center;margin-bottom:3rem">
+      <span style="font-size:3.5rem;display:block;margin-bottom:1rem">📸</span>
+      <h3 style="font-family:'Teko',sans-serif;font-weight:700;font-size:2rem;text-transform:uppercase;color:var(--tw);letter-spacing:.05em;margin-bottom:.8rem">Gallery Coming Soon</h3>
+      <p style="font-family:'Lora',serif;font-style:italic;color:var(--tm);max-width:500px;margin:0 auto 2rem;line-height:1.7">We're building out the photo and video gallery. Follow us on socials for real-time gig content from the Oz Soundz community.</p>
+      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap">
+        <a class="btn bg" href="https://instagram.com/ozsoundz" target="_blank" style="text-decoration:none">Instagram</a>
+        <a class="btn bg" href="https://tiktok.com/@ozsoundz" target="_blank" style="text-decoration:none">TikTok</a>
+        <a class="btn bg" href="https://youtube.com/@ozsoundz" target="_blank" style="text-decoration:none">YouTube</a>
+      </div>
+    </div>
+    <div class="g4">
+      <div style="background:var(--forge);border:1px solid rgba(58,51,40,.5);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--td);transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(122,16,16,.4)'" onmouseout="this.style.borderColor='rgba(58,51,40,.5)'">📷</div>
+      <div style="background:var(--forge);border:1px solid rgba(58,51,40,.5);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--td);transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(122,16,16,.4)'" onmouseout="this.style.borderColor='rgba(58,51,40,.5)'">📷</div>
+      <div style="background:var(--forge);border:1px solid rgba(58,51,40,.5);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--td);transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(122,16,16,.4)'" onmouseout="this.style.borderColor='rgba(58,51,40,.5)'">📷</div>
+      <div style="background:var(--forge);border:1px solid rgba(58,51,40,.5);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--td);transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(122,16,16,.4)'" onmouseout="this.style.borderColor='rgba(58,51,40,.5)'">📷</div>
+      <div style="background:var(--forge);border:1px solid rgba(58,51,40,.5);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--td);transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(122,16,16,.4)'" onmouseout="this.style.borderColor='rgba(58,51,40,.5)'">📷</div>
+      <div style="background:var(--forge);border:1px solid rgba(58,51,40,.5);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--td);transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(122,16,16,.4)'" onmouseout="this.style.borderColor='rgba(58,51,40,.5)'">📷</div>
+      <div style="background:var(--forge);border:1px solid rgba(58,51,40,.5);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--td);transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(122,16,16,.4)'" onmouseout="this.style.borderColor='rgba(58,51,40,.5)'">📷</div>
+      <div style="background:var(--forge);border:1px solid rgba(58,51,40,.5);aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--td);transition:all .3s;cursor:pointer" onmouseover="this.style.borderColor='rgba(122,16,16,.4)'" onmouseout="this.style.borderColor='rgba(58,51,40,.5)'">📷</div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: MEDIA OVERVIEW -->
+<div id="page-media" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span style="color:var(--td)">Our Media</span></div>
+    <h1 class="pht">Our <em>Media</em></h1>
+    <p class="phs">Blogs, podcast, and social — the full Oz Soundz media ecosystem.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g3">
+      <div class="card fu" onclick="go('blogs')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">📝</span><div class="ctag">Writing</div><div class="ctit">Blogs &amp; Articles</div><p class="cbod">Deep dives, artist stories, and industry takes — written by musicians for musicians. No corporate speak.</p></div>
+      <div class="card fu" onclick="go('social')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">📡</span><div class="ctag">Platforms</div><div class="ctit">Social Media</div><p class="cbod">Follow the journey across Facebook, Instagram, TikTok, YouTube, and X.</p></div>
+      <div class="card fu" onclick="go('podcast')" style="cursor:pointer"><span style="font-size:1.8rem;display:block;margin-bottom:.6rem">🎧</span><div class="ctag">Audio</div><div class="ctit">Oz Soundz Unleashed</div><p class="cbod">Our podcast. Candid long-form conversations with artists and scene-makers across Australia.</p></div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: BLOGS -->
+<div id="page-blogs" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('media')">Our Media</span><span class="bc-sep"> › </span><span style="color:var(--td)">Blogs &amp; Articles</span></div>
+    <h1 class="pht">Blogs <em>&amp; Articles</em></h1>
+    <p class="phs">Written by musicians for musicians. No corporate speak, no PR fluff.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="ey">From The Underground</div>
+    <h2 class="st">Real Talk<br/><em>About Real Music</em></h2>
+    <div class="g3 mt3">
+      <div class="blc fu"><div class="bld">Jun 2026</div><div class="blt">Why We're Building an Indie Record Label in 2026 — And Why It Matters</div><p class="blb">The major label model is broken for independent artists. Here's why we think the right indie label structure can fix it — and how we're designing Oz Soundz Records to do exactly that.</p><button class="blr">Read More →</button></div>
+      <div class="blc fu"><div class="bld">May 2026</div><div class="blt">The Artist-First Deal: What Fair Royalties Actually Look Like</div><p class="blb">We break down what artist-friendly record deals actually look like — masters ownership, royalty splits, recoupment, and why most major label contracts are designed against you.</p><button class="blr">Read More →</button></div>
+      <div class="blc fu"><div class="bld">Apr 2026</div><div class="blt">5 Things Every Emerging Australian Band Should Do Before Approaching a Label</div><p class="blb">Before you send your demo to anyone, make sure you've done these five things. They'll make you more attractive to labels and more protected if a deal does happen.</p><button class="blr">Read More →</button></div>
+      <div class="blc fu"><div class="bld">Mar 2026</div><div class="blt">Recording Your First EP: A Budget Guide for Indie Bands in 2026</div><p class="blb">Getting into a studio doesn't have to cost a fortune. Here's a practical breakdown of what a quality EP recording costs, where you can save, and where you absolutely shouldn't.</p><button class="blr">Read More →</button></div>
+      <div class="blc fu"><div class="bld">Feb 2026</div><div class="blt">The Oz Soundz Community: What It Means to Be Built From The Scene Up</div><p class="blb">We're not a corporation that saw a market opportunity. We're musicians who wanted something better. Here's the story behind why The Oz Soundz Group exists.</p><button class="blr">Read More →</button></div>
+      <div class="blc fu"><div class="bld">Jan 2026</div><div class="blt">Distribution in 2026: What Every Independent Artist Needs to Know</div><p class="blb">DistroKid, TuneCore, CD Baby — the landscape of music distribution has never been more accessible. But it's also never been more confusing. Here's the plain-English breakdown.</p><button class="blr">Read More →</button></div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: SOCIAL -->
+<div id="page-social" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('media')">Our Media</span><span class="bc-sep"> › </span><span style="color:var(--td)">Social Media</span></div>
+    <h1 class="pht">Social <em>Media</em></h1>
+    <p class="phs">Follow the Oz Soundz Records journey across all our platforms.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="ey">Follow Along</div>
+    <h2 class="st">Find Us<br/><em>Everywhere</em></h2>
+    <div class="g3 mt3" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+      <a class="soc fu" href="https://facebook.com/ozsoundz" target="_blank"><span class="soci">📘</span><div class="socn">Facebook</div><div class="soch">facebook.com/ozsoundz</div><p class="socd">Studio updates, gig news, artist features, and community discussion. Our main hub.</p></a>
+      <a class="soc fu" href="https://instagram.com/ozsoundz" target="_blank"><span class="soci">📷</span><div class="socn">Instagram</div><div class="soch">@ozsoundz</div><p class="socd">Visual updates, gig shots, artist spotlights, and behind-the-scenes moments.</p></a>
+      <a class="soc fu" href="https://tiktok.com/@ozsoundz" target="_blank"><span class="soci">🎵</span><div class="socn">TikTok</div><div class="soch">@ozsoundz</div><p class="socd">Short-form artist content, music clips, gig moments, and label updates.</p></a>
+      <a class="soc fu" href="https://youtube.com/@ozsoundz" target="_blank"><span class="soci">▶️</span><div class="socn">YouTube</div><div class="soch">@ozsoundz</div><p class="socd">Full-length artist sessions, podcast videos, gear reviews, and community vlogs.</p></a>
+      <a class="soc fu" href="https://x.com/ozsoundz" target="_blank"><span class="soci">𝕏</span><div class="socn">X / Twitter</div><div class="soch">@ozsoundz</div><p class="socd">Quick news updates, music shares, and real-time community engagement.</p></a>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: PODCAST -->
+<div id="page-podcast" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span class="bcl" onclick="go('media')">Our Media</span><span class="bc-sep"> › </span><span style="color:var(--td)">Podcast</span></div>
+    <h1 class="pht">Oz Soundz <em>Unleashed</em></h1>
+    <p class="phs">The podcast. Deep conversations with the artists, producers, and scene-makers who make Australian music worth listening to.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2 g2c">
+      <div>
+        <div class="ey">The Podcast</div>
+        <h2 class="st">Raw.<br/>Unfiltered.<br/><em>Real.</em></h2>
+        <p class="body-text">Oz Soundz Unleashed goes beyond the stage and into the real lives of artists, producers, and industry veterans who've dedicated everything to the music they love.</p>
+        <p class="body-text">No corporate filters. No PR spin. Just honest, raw conversations about the grind, the passion, and the Australian indie music scene. Oz Soundz Records artists will be regular features on the show.</p>
+        <div class="wf" style="margin:1.5rem 0"><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div><div class="wfb"></div></div>
+        <a class="btn br" href="https://www.ozsoundzunleashed.com" target="_blank" style="text-decoration:none">Visit Oz Soundz Unleashed</a>
+      </div>
+      <div>
+        <div class="card fu" style="margin-bottom:.8rem;padding:1.4rem;display:flex;align-items:center;gap:1rem"><span style="font-size:1.8rem;flex-shrink:0">🎵</span><div><div class="ctit" style="font-size:.95rem;margin-bottom:0">Spotify</div><p class="cbod" style="font-size:.78rem">Listen on Spotify</p></div></div>
+        <div class="card fu" style="margin-bottom:.8rem;padding:1.4rem;display:flex;align-items:center;gap:1rem"><span style="font-size:1.8rem;flex-shrink:0">🎙️</span><div><div class="ctit" style="font-size:.95rem;margin-bottom:0">Apple Podcasts</div><p class="cbod" style="font-size:.78rem">Listen on Apple Podcasts</p></div></div>
+        <div class="card fu" style="margin-bottom:.8rem;padding:1.4rem;display:flex;align-items:center;gap:1rem"><span style="font-size:1.8rem;flex-shrink:0">▶️</span><div><div class="ctit" style="font-size:.95rem;margin-bottom:0">YouTube</div><p class="cbod" style="font-size:.78rem">Watch on YouTube</p></div></div>
+        <div class="card fu" style="padding:1.4rem;display:flex;align-items:center;gap:1rem"><span style="font-size:1.8rem;flex-shrink:0">📻</span><div><div class="ctit" style="font-size:.95rem;margin-bottom:0">Google Podcasts</div><p class="cbod" style="font-size:.78rem">Listen on Google Podcasts</p></div></div>
+      </div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: GROUP -->
+<div id="page-group" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span style="color:var(--td)">The Oz Soundz Group</span></div>
+    <h1 class="pht">The Oz Soundz <em>Group</em></h1>
+    <p class="phs">One ecosystem. Three arms. A singular mission to support Australian independent music.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2 g2c" style="margin-bottom:4rem">
+      <div>
+        <div class="ey">Our Ecosystem</div>
+        <h2 class="st">Three Arms.<br/><em>One Mission.</em></h2>
+        <p class="body-text">The Oz Soundz Group is Australia's most community-driven music and audio ecosystem. We're not a corporation — we're musicians who give a damn about the indie scene, the underground stages, and the artists who pour everything into their craft.</p>
+        <p class="body-text">Our goal is to build a recognisable brand in the Australian Music, Audio, Recording and Live Performance industry — always with grassroots artists at the centre.</p>
+      </div>
+      <div class="mani">
+        <p class="manit">"Created by musicians. For musicians. We are here at every step of the artistic journey — from the first rehearsal to the final distribution."</p>
+        <p class="mania">— The Oz Soundz Group Manifesto</p>
+      </div>
+    </div>
+    <div class="g3">
+      <button class="gc fu" onclick="window.open('https://ozsoundz.com.au','_blank')"><span class="gcic">🎸</span><div class="gctg">Operational Now · Retail &amp; Gear</div><div class="gcnm">Music &amp; Audio</div><p class="gcbd">Quality instruments and gear at honest prices. By players, for players. 100% Australian owned and operated.</p></button>
+      <button class="gc fu" onclick="window.open('https://ozsoundzstudios.com.au','_blank')"><span class="gcic">🎙️</span><div class="gctg">Coming 2027/28 · Recording</div><div class="gcnm">Oz Soundz Studios</div><p class="gcbd">Professional recording, mixing &amp; mastering built for indie artists — affordable, no compromises.</p></button>
+      <button class="gc fu" onclick="go('home')"><span class="gcic">💿</span><div class="gctg">Coming 2030+ · You're Here</div><div class="gcnm">Oz Soundz Records</div><p class="gcbd">The indie label that actually has your back — artist-first deals, fair royalties, real support.</p></button>
+    </div>
+    <div class="cent mt3">
+      <a class="btn bg" href="https://ozsoundzgroup.com.au" target="_blank" style="text-decoration:none">Visit The Oz Soundz Group →</a>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════ PAGE: CONTACT -->
+<div id="page-contact" class="page">
+  <div class="pgh"><div class="con">
+    <div class="bc"><span class="bcl" onclick="go('home')">Home</span><span class="bc-sep"> › </span><span style="color:var(--td)">Contact</span></div>
+    <h1 class="pht">Contact <em>Us</em></h1>
+    <p class="phs">Want to submit music, register interest, or just say hello? We actually read these.</p>
+  </div></div>
+  <div data-ticker></div>
+  <section class="sec alt"><div class="con">
+    <div class="g2">
+      <div>
+        <div class="ey">Get In Touch</div>
+        <h2 class="st">We're<br/><em>Listening</em></h2>
+        <div class="crow"><div class="cico">✉</div><div><div class="clbl">Email</div><div class="cval"><a href="mailto:records@ozsoundz.com.au">records@ozsoundz.com.au</a></div></div></div>
+        <div class="crow"><div class="cico">📍</div><div><div class="clbl">Based In</div><div class="cval">Sydney, NSW, Australia</div></div></div>
+        <div class="crow"><div class="cico">⏳</div><div><div class="clbl">Applications Open</div><div class="cval">2030 — Register Interest Now</div></div></div>
+        <div class="crow"><div class="cico">🔗</div><div><div class="clbl">Part Of</div><div class="cval"><a href="https://ozsoundzgroup.com.au" target="_blank">The Oz Soundz Group</a></div></div></div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem">
+          <a class="fsb" href="https://facebook.com/ozsoundz" target="_blank">FB</a>
+          <a class="fsb" href="https://instagram.com/ozsoundz" target="_blank">IG</a>
+          <a class="fsb" href="https://tiktok.com/@ozsoundz" target="_blank">TT</a>
+          <a class="fsb" href="https://youtube.com/@ozsoundz" target="_blank">YT</a>
+          <a class="fsb" href="https://x.com/ozsoundz" target="_blank">X</a>
+        </div>
+        <div class="mani" style="margin-top:2rem">
+          <p class="manit">"The label is in development. Now is exactly the right time to introduce yourself."</p>
+          <p class="mania">— Oz Soundz Records Team</p>
+        </div>
+      </div>
+      <div>
+        <div id="contact-form">
+          <div class="fld"><label>Name / Band Name</label><input type="text" placeholder="Your name or band name"></div>
+          <div class="fld"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+          <div class="fld"><label>Enquiry Type</label>
+            <select>
+              <option>Register Interest — Signing Enquiry</option>
+              <option>Submit Music for Consideration</option>
+              <option>Featured Artist Spotlight</option>
+              <option>Artist Sponsorship Enquiry</option>
+              <option>Partnership / Collaboration</option>
+              <option>Media / Press Enquiry</option>
+              <option>Submit a Gig Listing</option>
+              <option>General Question</option>
+            </select>
+          </div>
+          <div class="fld"><label>Your Message</label><textarea placeholder="Tell us what's on your mind. What are you making? What are you looking for?"></textarea></div>
+          <button class="btn br" onclick="submitForm('contact-form','contact-thanks')">Send Message</button>
+        </div>
+        <div id="contact-thanks" style="display:none">
+          <div class="card" style="text-align:center;padding:3rem">
+            <span style="font-size:3rem;display:block;margin-bottom:1rem">✅</span>
+            <div class="ctit" style="font-size:1.6rem;margin-bottom:.8rem">Message Received!</div>
+            <p class="cbod" style="max-width:300px;margin:0 auto 1.5rem">Thanks for getting in touch. We'll get back to you as soon as possible.</p>
+            <button class="btn bg" onclick="document.getElementById('contact-form').style.display='block';document.getElementById('contact-thanks').style.display='none'">Send Another</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <div data-footer></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ JAVASCRIPT ENGINE -->
+<script>
+// ── ROUTING ──────────────────────────────────────────────────────────────────
+const PAGES = [
+  'home','about','purpose','vision','team',
+  'label','how-it-works','what-we-offer','royalties','faq',
+  'artists','roster','featured','submit',
+  'community','sponsorship','gigs','gig-photos',
+  'media','blogs','social','podcast',
+  'group','contact'
+];
+
+function go(id) {
+  // Hide all
+  PAGES.forEach(p => {
+    const el = document.getElementById('page-' + p);
+    if (el) el.classList.remove('active');
+  });
+  // Show target
+  const target = document.getElementById('page-' + id);
+  if (target) {
+    // Inject shared templates if not already injected
+    injectShared(target);
+    target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    updateNav(id);
+    setTimeout(initAnimations, 80);
+  }
+}
+
+// ── SHARED TEMPLATE INJECTION ────────────────────────────────────────────────
+function injectShared(page) {
+  // Ticker
+  page.querySelectorAll('[data-ticker]').forEach(slot => {
+    if (!slot.hasChildNodes()) {
+      const t = document.getElementById('tpl-ticker');
+      slot.appendChild(t.content.cloneNode(true));
+    }
+  });
+  // Stats
+  page.querySelectorAll('[data-stats]').forEach(slot => {
+    if (!slot.hasChildNodes()) {
+      const t = document.getElementById('tpl-stats');
+      slot.appendChild(t.content.cloneNode(true));
+    }
+  });
+  // Footer
+  page.querySelectorAll('[data-footer]').forEach(slot => {
+    if (!slot.hasChildNodes()) {
+      const t = document.getElementById('tpl-footer');
+      slot.appendChild(t.content.cloneNode(true));
+    }
+  });
+}
+
+// ── NAV ACTIVE STATE ─────────────────────────────────────────────────────────
+const NAV_MAP = {
+  'home':'home', 'about':'about', 'purpose':'about', 'vision':'about', 'team':'about',
+  'label':'label', 'how-it-works':'label', 'what-we-offer':'label', 'royalties':'label', 'faq':'label',
+  'artists':'artists', 'roster':'artists', 'featured':'artists', 'submit':'artists',
+  'community':'community', 'sponsorship':'community', 'gigs':'community', 'gig-photos':'community',
+  'media':'media', 'blogs':'media', 'social':'media', 'podcast':'media',
+  'group':'group', 'contact':'contact'
+};
+
+function updateNav(id) {
+  document.querySelectorAll('.nb2').forEach(b => b.classList.remove('on'));
+  const active = NAV_MAP[id];
+  document.querySelectorAll('.nb2').forEach(b => {
+    const txt = b.textContent.trim().toLowerCase().replace(/[^a-z]/g,'');
+    const mapKey = active ? active.replace(/-/g,'') : '';
+    if (txt === mapKey || txt.includes(mapKey)) b.classList.add('on');
+  });
+}
+
+// ── SCROLL ANIMATIONS ────────────────────────────────────────────────────────
+function initAnimations() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fu:not(.in)').forEach(el => obs.observe(el));
+}
+
+// ── NAV SCROLL ───────────────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('nav');
+  if (nav) nav.classList.toggle('raised', window.scrollY > 40);
+});
+
+// ── FORM HANDLER ─────────────────────────────────────────────────────────────
+function submitForm(formId, thanksId) {
+  document.getElementById(formId).style.display = 'none';
+  document.getElementById(thanksId).style.display = 'block';
+}
+
+// ── BOOT ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  go('home');
+});
+</script>
+</body>
+</html>
